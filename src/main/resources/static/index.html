@@ -4,33 +4,44 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
-    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/index.js"></script>
+    <title>MEMO</title>
 </head>
 <body>
-    <div>
-        <div>MEMO</div>
-        <div>따라하면 만들어지는 메모장 + AWS 배포까지</div>
-    </div>
-    <div>
-        <!-- SEARCH -->
-        <div contenteditable placeholder="검색어를 입력하세요." style="cursor: text;"></div>
-        <span class="material-icons" onClick="alert('search클릭');" style="cursor: pointer;">search</span>
-        <!-- CREATE -->
-        <div>
-            <div contenteditable placeholder="메모를 입력하세요." style="cursor: text;"></div>
-            <span class="material-icons" onClick="alert('send클릭');" style="cursor: pointer;">send</span>
-        </div>
-        <!-- LIST, GET -->
-        <div>
-            <div>
-                <div class="contents"></div>
-                <div>
-                    <span class="material-icons" onClick="alert('edit클릭');" style="cursor: pointer;">edit</span>
-                    <span class="material-icons" onClick="alert('delete클릭');" style="cursor: pointer;">delete</span>
-                    <span class="material-icons" onClick="alert('edit완료클릭');" style="cursor: pointer;">done</span>
-                </div>
-            </div>
+<div class="text-top-area" onClick="loadHtml()">
+    <div class="text-top-area-memo">MEMO</div>
+    <div class="text-top-area-content">따라하면 만들어지는 메모장 + AWS 배포까지</div>
+</div>
+<div>
+    <!-- SEARCH -->
+    <div class="search-area common-width">
+        <div  class="search-area-memo-text-wrapper">
+            <div contenteditable class="search-area-memo-text" id="search-memo-text" placeholder="검색어를 입력하세요" style="cursor: text;" onkeydown="handleSearchKeyPress(event)"></div>
+            <span class="material-icons" id="search-area-icon" onClick="searchMemo()">search</span>
         </div>
     </div>
+    <!-- CREATE -->
+    <div class="create-area common-width">
+        <div class="create-area-memo-text-wrapper">
+            <div contenteditable class="create-area-memo-text" id="create-memo-text" placeholder="메모를 입력하세요(최대 공백 포함 1000자 이하)" style="cursor: text;"></div>
+            <span class="material-icons" id="create-area-icon" onClick="createMemo()">send</span>
+        </div>
+    </div>
+    <!-- LIST, GET -->
+    <div>
+        <div class="contents-area"></div>
+    </div>
+    <div class="body-footer"></div>
+</div>
 </body>
+<footer>
+    <div class="footer-content">
+        <p>Project Memo</p>
+        <p>Developer: delay100</p>
+        <p>Code: <a href="https://github.com/delay-100/memo">https://github.com/delay-100/memo</a></p>
+        <p>Blog: <a href="https://delay100.tistory.com/">https://delay100.tistory.com/</a></p>
+        <p>Contact: <a href="mailto:gitignore@kakao.com">gitignore@kakao.com</a></p>
+    </div>
+</footer>
 </html>
