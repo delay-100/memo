@@ -1,10 +1,10 @@
 package com.whitedelay.memo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -18,6 +18,7 @@ public class Memo {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 1, 2, 3, 4와 같이 순차적으로 id값을 자동으로 증가시킴
     private Long id;
 
+    @Column(length = 1100)
     private String contents;
 
     private LocalDateTime createdAt;
